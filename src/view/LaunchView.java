@@ -8,63 +8,63 @@ import java.awt.FlowLayout;
 
 public class LaunchView extends JFrame {
 
-	private JButton comparar,buscar,copiar,btnGuardar,btnRecuperar,btnRecuperarTodos;
+	private JButton comparar, buscar, copiar, btnGuardar, btnRecuperar, btnRecuperarTodos;
 	private JTextArea textArea;
-	private JTextField fichero1,fichero2,palabra,titulo,autor,año,editor,paginas;
-	private JLabel label_f1,label_f2,label_pal,label_titulo,label_autor,label_año,label_editor,label_paginas;
+	private JTextField fichero1, fichero2, palabra, titulo, autor, año, editor, paginas;
+	private JLabel label_f1, label_f2, label_pal, label_titulo, label_autor, label_año, label_editor, label_paginas;
 	private JCheckBox primera;
-	private JPanel consola,global;
-	
+	private JPanel consola, global;
+
 	public LaunchView() {
-		setBounds(200,200,1000,450);
-		setTitle("Proyecto Buffers");	
-        
-        global = new JPanel();
-        getContentPane().add(global, BorderLayout.CENTER);
-        global.setLayout(null);
-        
-        consola = new JPanel();
-        consola.setBounds(103, 5, 656, 286);
-        global.add(consola);
-        
-        textArea = new JTextArea(15, 80);
-        JScrollPane sp = new JScrollPane(textArea);
-        consola.add(sp);
-        textArea.setBounds(50,50,50,50);
-        textArea.setEditable(false);
+		setBounds(200, 200, 1000, 450);
+		setTitle("Proyecto Buffers");
+
+		global = new JPanel();
+		getContentPane().add(global, BorderLayout.CENTER);
+		global.setLayout(null);
+
+		consola = new JPanel();
+		consola.setBounds(10, 5, 805, 286);
+		global.add(consola);
+
+		textArea = new JTextArea(15, 60);
+		JScrollPane sp = new JScrollPane(textArea);
+		consola.add(sp);
+		textArea.setBounds(50, 50, 50, 50);
+		textArea.setEditable(false);
 		label_titulo = new JLabel("Titulo");
 		label_titulo.setBounds(825, 21, 86, 14);
 		global.add(label_titulo);
-        
-    	//Libro
-		titulo = new JTextField("",10);
+
+		// Libro
+		titulo = new JTextField("", 10);
 		titulo.setBounds(825, 46, 86, 20);
 		global.add(titulo);
 		label_autor = new JLabel("Autor");
 		label_autor.setBounds(825, 82, 86, 14);
 		global.add(label_autor);
-		autor = new JTextField("",10);
+		autor = new JTextField("", 10);
 		autor.setBounds(825, 107, 86, 20);
 		global.add(autor);
 		label_año = new JLabel("Año");
 		label_año.setBounds(825, 135, 86, 14);
 		global.add(label_año);
-		año = new JTextField("",10);
+		año = new JTextField("", 10);
 		año.setBounds(825, 160, 86, 20);
 		global.add(año);
 		label_editor = new JLabel("Editor");
 		label_editor.setBounds(825, 192, 86, 14);
 		global.add(label_editor);
-		editor = new JTextField("",10);
+		editor = new JTextField("", 10);
 		editor.setBounds(825, 217, 86, 20);
 		global.add(editor);
 		label_paginas = new JLabel("Paginas");
 		label_paginas.setBounds(825, 246, 86, 14);
 		global.add(label_paginas);
-		paginas = new JTextField("",10);
+		paginas = new JTextField("", 10);
 		paginas.setBounds(825, 271, 86, 20);
 		global.add(paginas);
-		
+
 		btnGuardar = new JButton("Guardar libro");
 		btnGuardar.setBounds(791, 307, 150, 26);
 		global.add(btnGuardar);
@@ -77,31 +77,31 @@ public class LaunchView extends JFrame {
 		btnRecuperarTodos.setBounds(791, 375, 150, 26);
 		global.add(btnRecuperarTodos);
 		btnRecuperarTodos.setPreferredSize(new Dimension(150, 26));
-		
+
 		label_f1 = new JLabel("Fichero 1:");
 		label_f1.setBounds(129, 302, 59, 14);
 		global.add(label_f1);
-		
-		fichero1 = new JTextField("",10);
+
+		fichero1 = new JTextField("", 10);
 		fichero1.setBounds(187, 302, 86, 20);
 		global.add(fichero1);
 		label_f2 = new JLabel("Fichero 2:");
 		label_f2.setBounds(282, 302, 59, 14);
 		global.add(label_f2);
-		fichero2 = new JTextField("",10);
+		fichero2 = new JTextField("", 10);
 		fichero2.setBounds(340, 302, 86, 20);
 		global.add(fichero2);
 		label_pal = new JLabel("Palabra:");
 		label_pal.setBounds(441, 302, 49, 14);
 		global.add(label_pal);
-		palabra = new JTextField("",10);
+		palabra = new JTextField("", 10);
 		palabra.setBounds(491, 302, 86, 20);
 		global.add(palabra);
-		
+
 		primera = new JCheckBox("Primera aparición");
 		primera.setBounds(588, 298, 192, 23);
 		global.add(primera);
-		
+
 		comparar = new JButton("Comparar contenido");
 		comparar.setBounds(129, 354, 150, 26);
 		global.add(comparar);
@@ -114,8 +114,8 @@ public class LaunchView extends JFrame {
 		copiar.setBounds(491, 354, 150, 26);
 		global.add(copiar);
 		copiar.setPreferredSize(new Dimension(150, 26));
-	}	
-	
+	}
+
 	public JButton getComparar() {
 		return comparar;
 	}
@@ -147,7 +147,7 @@ public class LaunchView extends JFrame {
 	public void setTextArea(JTextArea textArea) {
 		this.textArea = textArea;
 	}
-			
+
 	public JTextField getFichero1() {
 		return fichero1;
 	}
@@ -180,11 +180,8 @@ public class LaunchView extends JFrame {
 		this.primera = primera;
 	}
 
-	public void showError(String m){
-		JOptionPane.showMessageDialog(this.consola,
-			    m,
-			    "Error",
-			    JOptionPane.ERROR_MESSAGE);
+	public void showError(String m) {
+		JOptionPane.showMessageDialog(this.consola, m, "Error", JOptionPane.ERROR_MESSAGE);
 	}
 
 	public JTextField getTitulo() {
@@ -250,7 +247,6 @@ public class LaunchView extends JFrame {
 	public void setBtnRecuperarTodos(JButton btnRecuperarTodos) {
 		this.btnRecuperarTodos = btnRecuperarTodos;
 	}
-	
 
 	public void limpiarCampos() {
 		titulo.setText("");
@@ -259,5 +255,5 @@ public class LaunchView extends JFrame {
 		editor.setText("");
 		paginas.setText("");
 	}
-	
+
 }

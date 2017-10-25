@@ -2,16 +2,15 @@ package model;
 
 import java.io.Serializable;
 
-public class LibroVO implements Serializable{
+public class Libro implements Serializable {
 	private String identificador;
 	private String titulo;
 	private String autor;
 	private String año;
 	private String editor;
 	private String paginas;
-	
-	
-	public LibroVO(String identificador, String titulo, String autor, String año, String editor, String paginas) {
+
+	public Libro(String identificador, String titulo, String autor, String año, String editor, String paginas) {
 		this.identificador = identificador;
 		this.titulo = titulo;
 		this.autor = autor;
@@ -19,10 +18,11 @@ public class LibroVO implements Serializable{
 		this.editor = editor;
 		this.paginas = paginas;
 	}
-	
+
 	@Override
 	public String toString() {
-		String descripcion = "Titulo: "+titulo+"\n Autor: "+autor+"\n Año: "+año+"\n Editor: "+editor+"\n Páginas: "+paginas;
+		String descripcion = "Titulo: " + titulo + "\n Autor: " + autor + "\n Año: " + año + "\n Editor: " + editor
+				+ "\n Páginas: " + paginas;
 		return descripcion;
 	}
 
