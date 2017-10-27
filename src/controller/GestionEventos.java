@@ -169,7 +169,7 @@ public class GestionEventos {
 		// Comprobamos si titulo esta vacio
 		if (titulo.length() != 0) {
 			// Comprobamos si el fichero existe
-			if (model.ficheroExiste(new File("libros\\" + titulo))) {
+			if (model.ficheroExiste(new File("CarpetaLibros\\" + titulo))) {
 				opcion = sobreescribir();
 				if (opcion == 0) { // Elige sobreescribir
 					try {
@@ -215,17 +215,17 @@ public class GestionEventos {
 	}
 
 	private void call_recuperarTodos() {
-		ArrayList<Libro> libros = new ArrayList<Libro>();
+		ArrayList<Libro> listaLibros = new ArrayList<Libro>();
 		StringBuilder resultado = new StringBuilder();
 		String encabezado;
 
 		try {
-			libros = model.recuperar_todos();
+			listaLibros = model.recuperar_todos();
 			// Comprobamos si hemos obtenido algun resultado
-			encabezado = libros.size() == 0 ? " NO HAY RESULTADOS" : " " + libros.size() + " RESULTADOS:\n";
+			encabezado = listaLibros.size() == 0 ? " NO HAY RESULTADOS" : " " + listaLibros.size() + " RESULTADOS:\n";
 			resultado.append(encabezado);
-			for (int i = 0; i < libros.size(); i++) {
-				resultado.append("  - " + libros.get(i).getTitulo() + "\n");
+			for (int i = 0; i < listaLibros.size(); i++) {
+				resultado.append("  - " + listaLibros.get(i).getTitulo() + "\n");
 			}
 			view.getTextArea().setText(resultado.toString());
 		} catch (Exception e) {

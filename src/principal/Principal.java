@@ -1,5 +1,7 @@
 package principal;
 
+import java.io.File;
+
 import javax.swing.JFrame;
 
 import model.*;
@@ -18,6 +20,9 @@ public class Principal {
 
 		GestionEventos controller = new GestionEventos(model, view);
 		controller.contol();
+		
+		//Creamos una carpeta para los libros
+		new File("CarpetaLibros").mkdir(); 
 
 	}
 

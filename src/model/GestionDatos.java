@@ -125,7 +125,7 @@ public class GestionDatos {
 
 		// Creamos el objeto libro y el fichero donde lo guardaremos
 		libro = new Libro(identificador, titulo, autor, año, editor, paginas);
-		fos = new FileOutputStream("libros\\" + identificador);
+		fos = new FileOutputStream("CarpetaLibros\\" + identificador);
 		// Guardamos
 		salida = new ObjectOutputStream(fos);
 		salida.writeObject(libro);
